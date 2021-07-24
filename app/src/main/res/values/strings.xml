@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PassMan</string>
+    <string-array name="services">
+        <item>Amazon</item>
+        <item>Apple</item>
+        <item>Dropbox</item>
+        <item>Facebook</item>
+        <item>Flipkart</item>
+        <item>Github</item>
+        <item>Google</item>
+        <item>Google+</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+        <item>Pinterest</item>
+        <item>Reddit</item>
+        <item>Soundcloud</item>
+        <item>Snapchat</item>
+        <item>Twitch</item>
+        <item>Twitter</item>
+        <item>Spotify</item>
+        <item>Youtube</item>
+    </string-array>
+</resources>
