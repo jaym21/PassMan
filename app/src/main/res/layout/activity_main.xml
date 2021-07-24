@@ -16,6 +16,7 @@
         android:textSize="30sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvServices"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/service_item_layout"
