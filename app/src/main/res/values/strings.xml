@@ -11,13 +11,15 @@
         <item>Google+</item>
         <item>Instagram</item>
         <item>LinkedIn</item>
+        <item>Myntra</item>
         <item>Pinterest</item>
         <item>Reddit</item>
-        <item>Soundcloud</item>
         <item>Snapchat</item>
+        <item>Soundcloud</item>
+        <item>Spotify</item>
+        <item>Tumblr</item>
         <item>Twitch</item>
         <item>Twitter</item>
-        <item>Spotify</item>
         <item>Youtube</item>
     </string-array>
 </resources>
