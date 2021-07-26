@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/rlService">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlService"
+    android:background="@drawable/service_display_bg"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:layout_marginBottom="16dp">
 
     <ImageView
         android:id="@+id/ivImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_marginStart="10dp"/>
 
     <TextView
         android:id="@+id/tvName"
@@ -17,7 +22,16 @@
         android:layout_height="wrap_content"
         android:text="Facebook"
         android:textSize="22sp"
-        android:layout_gravity="center"
-        android:layout_toRightOf="@id/ivImage"/>
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/ivImage"
+        android:layout_marginStart="16dp"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_arrow_right"
+        app:tint="@color/white"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
 
 </RelativeLayout>

@@ -1,6 +1,5 @@
 package dev.jaym21.passman.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +11,7 @@ import dev.jaym21.passman.adapter.IServiceAdapter
 import dev.jaym21.passman.adapter.ServiceAdapter
 import dev.jaym21.passman.databinding.ActivityMainBinding
 import dev.jaym21.passman.model.Service
+import android.content.Intent as Intent
 
 class MainActivity : AppCompatActivity(), IServiceAdapter {
 
@@ -31,6 +31,10 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
         viewModel.allService.observe({lifecycle}, Observer {
             serviceAdapter.updateList(it)
         })
+
+        binding?.btnAdd?.setOnClickListener {
+            startActivity(Intent(this, AddService::class.java))
+        }
     }
 
     private fun setUpRecycleView(){

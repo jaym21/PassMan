@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.MainActivity"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingTop="16dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Passwords"
+        android:text="Services"
         android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/btnAdd"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_add"
+        app:tint="@color/white"
+        android:background="@drawable/service_display_bg"
+        android:layout_alignParentEnd="true"
+        app:cornerRadius="10dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvServices"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/service_item_layout"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnAdd"/>
 
-</LinearLayout>
+
+</RelativeLayout>

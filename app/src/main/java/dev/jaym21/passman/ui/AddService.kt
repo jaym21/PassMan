@@ -1,5 +1,6 @@
 package dev.jaym21.passman.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,10 +22,15 @@ class AddService : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
-        if (checkUsernameAndPassword()){
-            val service = Service(1, binding?.spinnerServices?.selectedItem.toString(), binding?.etUsername?.text.toString(), binding?.etPassword?.text.toString())
-            viewModel.insertService(service)
-            Toast.makeText(this, " New ${binding?.spinnerServices?.selectedItem.toString()} service added", Toast.LENGTH_SHORT).show()
+
+        binding?.btnAdd?.setOnClickListener {
+            if (checkUsernameAndPassword()){
+                val service = Service(0, binding?.spinnerServices?.selectedItem.toString(), binding?.etUsername?.text.toString(), binding?.etPassword?.text.toString())
+                viewModel.insertService(service)
+                Toast.makeText(this, " New ${binding?.spinnerServices?.selectedItem.toString()} service added", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }
     }
 
