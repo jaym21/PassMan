@@ -36,14 +36,7 @@ class AddService : AppCompatActivity() {
 
     private fun checkUsernameAndPassword(): Boolean {
         var isCorrect = true
-        if (binding?.etUsername?.text.isNullOrEmpty()){
-            Toast.makeText(this, "Add the username", Toast.LENGTH_SHORT).show()
-            isCorrect = false
-        }
-        if (binding?.etPassword?.text.isNullOrEmpty()){
-            Toast.makeText(this, "Add the password", Toast.LENGTH_SHORT).show()
-            isCorrect = false
-        }
+
         return isCorrect
     }
 
