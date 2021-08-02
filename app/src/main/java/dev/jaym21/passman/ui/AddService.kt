@@ -3,12 +3,14 @@ package dev.jaym21.passman.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import dev.jaym21.passman.R
 import dev.jaym21.passman.databinding.ActivityAddServiceBinding
 import dev.jaym21.passman.databinding.ActivityMainBinding
 import dev.jaym21.passman.model.Service
+import dev.jaym21.passman.utils.Helper
 
 class AddService : AppCompatActivity() {
 
@@ -25,18 +27,29 @@ class AddService : AppCompatActivity() {
 
         binding?.btnAdd?.setOnClickListener {
             if (checkUsernameAndPassword()){
-                val service = Service(0, binding?.spinnerServices?.selectedItem.toString(), binding?.etUsername?.text.toString(), binding?.etPassword?.text.toString())
-                viewModel.insertService(service)
-                Toast.makeText(this, " New ${binding?.spinnerServices?.selectedItem.toString()} service added", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
+                val encryptPass = Helper.encrypt(binding?.etPassword?.text.toString())
+                if (encryptPass == null){
+                    Toast.makeText(this, "Error while encrypting password", Toast.LENGTH_SHORT).show()
+                }else {
+                    val service = Service(0, binding?.spinnerServices?.selectedItem.toString(), binding?.etUsername?.text.toString(), encryptPass)
+                    viewModel.insertService(service)
+                    Toast.makeText(this, " New ${binding?.spinnerServices?.selectedItem.toString()} service added", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
             }
         }
     }
 
     private fun checkUsernameAndPassword(): Boolean {
         var isCorrect = true
-
+        if (binding?.etUsername?.text.isNullOrEmpty()){
+            Toast.makeText(this, "Add the username", Toast.LENGTH_SHORT).show()
+            isCorrect = false
+        } else if (binding?.etPassword?.text.isNullOrEmpty()){
+            Toast.makeText(this, "Add the password", Toast.LENGTH_SHORT).show()
+            isCorrect = false
+        }
         return isCorrect
     }
 
