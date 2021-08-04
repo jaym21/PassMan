@@ -3,6 +3,7 @@ package dev.jaym21.passman.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -23,6 +24,9 @@ class AddService : AppCompatActivity() {
         setContentView(binding?.root)
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
+
+        val spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.services, R.layout.spinner_item)
+        binding?.spinnerServices?.adapter = spinnerAdapter
 
 
         binding?.btnAdd?.setOnClickListener {

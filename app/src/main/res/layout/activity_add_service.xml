@@ -1,56 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.AddService"
-    android:orientation="vertical">
+    android:padding="16dp"
+    android:background="@color/bg_color">
 
-    <Spinner
-        android:id="@+id/spinnerServices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:entries="@array/services"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilUsername"
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_arrow_left"
+        app:tint="@color/blue_500"
+        android:background="@drawable/service_display_bg"
+        app:cornerRadius="10dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"/>
+
+    <ImageView
+        android:id="@+id/iv_illustration"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_addservice_illustration"
+        android:layout_below="@id/btnBack"
+        android:layout_centerHorizontal="true"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/InputStyle"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical"
+        android:background="@drawable/service_display_bg"
+        android:backgroundTint="@color/bg_light"
+        android:padding="16dp"
+        android:layout_below="@id/iv_illustration">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etUsername"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="Username"
-        android:inputType="text" />
+        <TextView
+            android:id="@+id/tvChoose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose a service"
+            android:textSize="22sp"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="30dp"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <Spinner
+            android:id="@+id/spinnerServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvChoose"
+            android:layout_marginTop="10dp"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/InputStyle"
-        android:layout_marginTop="20dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/InputStyle"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/spinnerServices"
+            android:textColorHint="@color/blue_500">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Password"
-            android:inputType="text" />
+            android:hint="Username"
+            android:inputType="text"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/blue_500"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/InputStyle"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/tilUsername"
+            android:textColorHint="@color/blue_500">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Password"
+                android:inputType="text"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/blue_500" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <ImageView
         android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        android:textAllCaps="false"/>
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_check"
+        app:tint="@color/blue_500"
+        android:background="@drawable/service_display_bg"
+        app:cornerRadius="10dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
 
 
-</LinearLayout>
+</RelativeLayout>

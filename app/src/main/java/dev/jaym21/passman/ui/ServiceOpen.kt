@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -83,9 +84,12 @@ class ServiceOpen : AppCompatActivity() {
                 }
                 show()
             }
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            Handler().postDelayed({
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }, 3000)
         }
+
         binding?.btnEdit?.setOnClickListener {
             showEditDialog()
         }

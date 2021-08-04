@@ -18,6 +18,7 @@
         android:layout_weight="2"
         android:text="Facebook"
         android:textSize="22sp"
+        android:textColor="@color/blue_200"
         android:layout_gravity="center"/>
 
 </LinearLayout>

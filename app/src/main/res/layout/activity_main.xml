@@ -7,13 +7,15 @@
     tools:context=".ui.MainActivity"
     android:paddingTop="16dp"
     android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:paddingEnd="16dp"
+    android:background="@color/bg_color">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Services"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textColor="@color/white"/>
 
     <ImageView
         android:id="@+id/btnAdd"

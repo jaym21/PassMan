@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.ServiceOpen">
+    tools:context=".ui.ServiceOpen"
+    android:background="@color/bg_color">
 
     <ImageView
         android:id="@+id/btnBack"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/ic_arrow_left"
-        app:tint="@color/white"
+        app:tint="@color/blue_500"
         android:background="@drawable/service_display_bg"
         app:cornerRadius="10dp"
         android:paddingTop="12dp"
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Amazon"
         android:textSize="30sp"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"/>
 
@@ -35,7 +37,7 @@
         android:src="@drawable/ic_amazon"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btnBack"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="50dp" />
 
 
     <LinearLayout
@@ -51,7 +53,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_person"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            app:tint="@color/blue_200" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -64,14 +67,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Username"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:textColor="@color/text_color"/>
 
             <TextView
                 android:id="@+id/tvServiceUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="test"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textColor="@color/text_light"/>
 
         </LinearLayout>
 
@@ -89,27 +94,31 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_key"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        app:tint="@color/blue_200"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/ivKey">
+        android:layout_toEndOf="@id/ivKey"
+        android:layout_toStartOf="@id/ivClipboard">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textColor="@color/text_color"/>
 
         <TextView
             android:id="@+id/tvServicePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="123456789"
-            android:textSize="22sp"/>
+            android:textSize="22sp"
+            android:textColor="@color/text_light"/>
 
     </LinearLayout>
 
@@ -118,6 +127,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/ic_copy"
+        app:tint="@color/blue_200"
         android:layout_gravity="center"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"/>
@@ -129,7 +139,7 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/ic_edit"
-        app:tint="@color/white"
+        app:tint="@color/blue_500"
         android:background="@drawable/service_display_bg"
         app:cornerRadius="10dp"
         android:paddingTop="12dp"
@@ -145,7 +155,7 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/ic_delete"
-        app:tint="@color/white"
+        app:tint="@color/blue_500"
         android:background="@drawable/service_display_bg"
         app:cornerRadius="10dp"
         android:paddingTop="12dp"
