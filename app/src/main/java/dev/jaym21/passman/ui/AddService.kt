@@ -25,7 +25,8 @@ class AddService : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
-        val spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.services, R.layout.spinner_item)
+        val allServices = resources.getStringArray(R.array.services)
+        val spinnerAdapter = ArrayAdapter(applicationContext, R.layout.spinner_item, allServices)
         binding?.spinnerServices?.adapter = spinnerAdapter
 
 

@@ -22,7 +22,7 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/ic_add"
-        app:tint="@color/white"
+        app:tint="@color/blue_500"
         android:background="@drawable/service_display_bg"
         android:layout_alignParentEnd="true"
         app:cornerRadius="10dp"
