@@ -25,10 +25,6 @@ class AddService : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
-        val allServices = resources.getStringArray(R.array.services)
-        val spinnerAdapter = ArrayAdapter(applicationContext, R.layout.spinner_item, allServices)
-        binding?.spinnerServices?.adapter = spinnerAdapter
-
 
         binding?.btnAdd?.setOnClickListener {
             if (checkUsernameAndPassword()){

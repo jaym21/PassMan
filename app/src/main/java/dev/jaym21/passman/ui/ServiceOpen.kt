@@ -10,8 +10,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
@@ -101,14 +103,14 @@ class ServiceOpen : AppCompatActivity() {
         editDialog.apply {
             setView(editDialogView)
             setCancelable(true)
-            window?.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            window?.setBackgroundDrawable(ContextCompat.getDrawable(this@ServiceOpen, R.drawable.edit_dialog_bg))
             show()
         }
         //filling up username and password with old details
         editDialogView.findViewById<EditText>(R.id.etEditUsername).setText(selectedService!!.username)
         editDialogView.findViewById<EditText>(R.id.etEditPassword).setText(decryptPass)
 
-        editDialogView.findViewById<Button>(R.id.btnSave).setOnClickListener {
+        editDialogView.findViewById<ImageView>(R.id.btnSave).setOnClickListener {
             if (editDialogView.findViewById<EditText>(R.id.etEditUsername).text.isNullOrEmpty()){
                 Toast.makeText(this, "Add the username", Toast.LENGTH_SHORT).show()
             } else if (editDialogView.findViewById<EditText>(R.id.etEditPassword).text.isNullOrEmpty()){

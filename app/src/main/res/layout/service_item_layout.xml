@@ -25,12 +25,15 @@
         android:layout_height="wrap_content"
         android:text="Facebook"
         android:textSize="22sp"
-        android:textColor="#DFFFFFFF"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/lato_regular"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/ivImage"
+        android:layout_toStartOf="@id/ivArrow"
         android:layout_marginStart="16dp"/>
 
     <ImageView
+        android:id="@+id/ivArrow"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_arrow_right"

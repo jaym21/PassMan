@@ -27,6 +27,7 @@
         android:text="Amazon"
         android:textSize="30sp"
         android:textColor="@color/white"
+        android:fontFamily="@font/lato_bold"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"/>
 
@@ -68,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:text="Username"
                 android:textSize="22sp"
-                android:textColor="@color/text_color"/>
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/lato_regular"/>
 
             <TextView
                 android:id="@+id/tvServiceUserName"
@@ -76,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:text="test"
                 android:textSize="20sp"
-                android:textColor="@color/text_light"/>
+                android:textColor="@color/text_light"
+                android:fontFamily="@font/lato_regular"/>
 
         </LinearLayout>
 
@@ -110,7 +113,8 @@
             android:layout_height="wrap_content"
             android:text="Password"
             android:textSize="22sp"
-            android:textColor="@color/text_color"/>
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/lato_regular"/>
 
         <TextView
             android:id="@+id/tvServicePassword"
@@ -118,7 +122,8 @@
             android:layout_height="wrap_content"
             android:text="123456789"
             android:textSize="22sp"
-            android:textColor="@color/text_light"/>
+            android:textColor="@color/text_light"
+            android:fontFamily="@font/lato_regular"/>
 
     </LinearLayout>
 
