@@ -30,6 +30,11 @@ class AddService : AppCompatActivity() {
         adapter.setDropDownViewResource(R.layout.spinner_dropdown)
         binding?.spinnerServices?.adapter = adapter
 
+        binding?.btnBack?.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
 
         binding?.btnAdd?.setOnClickListener {
             if (checkUsernameAndPassword()){

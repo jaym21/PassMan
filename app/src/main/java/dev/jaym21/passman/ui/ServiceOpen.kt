@@ -1,6 +1,9 @@
 
 package dev.jaym21.passman.ui
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -76,6 +79,11 @@ class ServiceOpen : AppCompatActivity() {
         decryptPass = Helper.decrypt(selectedService!!.password)!!
         binding?.tvServicePassword?.text = decryptPass
 
+
+        binding?.ivClipboard?.setOnClickListener {
+            copyPasswordToClipboard()
+        }
+
         binding?.btnDelete?.setOnClickListener {
             viewModel.deleteService(selectedService!!)
             Helper.servicesArray.add(selectedService!!.name)
@@ -100,6 +108,16 @@ class ServiceOpen : AppCompatActivity() {
         binding?.btnEdit?.setOnClickListener {
             showEditDialog()
         }
+    }
+
+    private fun copyPasswordToClipboard() {
+        val passwordToCopy = Helper.decrypt(selectedService!!.password)!!
+        //initializing clipboard manager
+        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        //copying to clipboard
+        val clipData = ClipData.newPlainText("text", passwordToCopy)
+        clipboardManager.setPrimaryClip(clipData)
+        Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_SHORT).show()
     }
 
     private fun showEditDialog() {
