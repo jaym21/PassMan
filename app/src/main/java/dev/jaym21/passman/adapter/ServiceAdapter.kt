@@ -14,7 +14,7 @@ import dev.jaym21.passman.R
 import dev.jaym21.passman.model.Service
 import dev.jaym21.passman.utils.ServiceDiffUtil
 
-class ServiceAdapter(private val context: Context, private val listener: IServiceAdapter): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
+class ServiceAdapter(private val listener: IServiceAdapter): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
 
     private var allServices = emptyList<Service>()
 

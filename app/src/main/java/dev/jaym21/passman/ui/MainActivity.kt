@@ -2,15 +2,19 @@ package dev.jaym21.passman.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.view.animation.AnimationUtils
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.ItemTouchHelper.*
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import dev.jaym21.passman.R
 import dev.jaym21.passman.adapter.IServiceAdapter
 import dev.jaym21.passman.adapter.ServiceAdapter
 import dev.jaym21.passman.databinding.ActivityMainBinding
 import dev.jaym21.passman.model.Service
+import java.util.*
 import android.content.Intent as Intent
 
 class MainActivity : AppCompatActivity(), IServiceAdapter {
@@ -30,6 +34,7 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
 
         viewModel.allService.observe({lifecycle}, Observer {
             serviceAdapter.updateList(it)
+            runRecyclerViewAnimation(binding?.rvServices!!)
         })
 
         binding?.btnAdd?.setOnClickListener {
@@ -38,11 +43,33 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
     }
 
     private fun setUpRecycleView(){
-        serviceAdapter = ServiceAdapter(this, this)
+        serviceAdapter = ServiceAdapter(this)
         binding?.rvServices?.apply {
             adapter = serviceAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
+    }
+
+    private fun runRecyclerViewAnimation(recyclerView: RecyclerView) {
+        val context = recyclerView.context
+        val controller = AnimationUtils.loadLayoutAnimation(context, R.anim.rv_layout_bottom_slide_in)
+        recyclerView.layoutAnimation = controller
+        recyclerView.scheduleLayoutAnimation()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        runRecyclerViewAnimation(binding?.rvServices!!)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        runRecyclerViewAnimation(binding?.rvServices!!)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        runRecyclerViewAnimation(binding?.rvServices!!)
     }
 
     override fun onDestroy() {

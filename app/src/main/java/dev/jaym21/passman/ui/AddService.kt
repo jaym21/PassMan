@@ -3,6 +3,7 @@ package dev.jaym21.passman.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
@@ -25,6 +26,10 @@ class AddService : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
+        val adapter = ArrayAdapter(this, R.layout.spinner_item, Helper.servicesArray)
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown)
+        binding?.spinnerServices?.adapter = adapter
+
 
         binding?.btnAdd?.setOnClickListener {
             if (checkUsernameAndPassword()){
@@ -34,7 +39,8 @@ class AddService : AppCompatActivity() {
                 }else {
                     val service = Service(0, binding?.spinnerServices?.selectedItem.toString(), binding?.etUsername?.text.toString(), encryptPass)
                     viewModel.insertService(service)
-                    Toast.makeText(this, " New ${binding?.spinnerServices?.selectedItem.toString()} service added", Toast.LENGTH_SHORT).show()
+                    Helper.servicesArray.remove(binding?.spinnerServices?.selectedItem.toString())
+                    Log.d("AddService", Helper.servicesArray.toString())
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }

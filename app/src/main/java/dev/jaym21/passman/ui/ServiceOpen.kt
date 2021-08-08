@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -77,12 +78,16 @@ class ServiceOpen : AppCompatActivity() {
 
         binding?.btnDelete?.setOnClickListener {
             viewModel.deleteService(selectedService!!)
+            Helper.servicesArray.add(selectedService!!.name)
+            Log.d("ServiceOpen", "Deleted service ${selectedService!!.name} || ${Helper.servicesArray}")
             //making a snackbar to show that zone is deleted and giving an option to undo the delete
             Snackbar.make(binding?.root!!, "Service deleted", Snackbar.LENGTH_LONG).apply {
                 //giving an option to undo
                 setAction("Undo") {
                     //storing the zone again in db
                     viewModel.insertService(selectedService!!)
+                    Helper.servicesArray.remove(selectedService!!.name)
+                    Log.d("ServiceOpen", "Restored service ${selectedService!!.name} || ${Helper.servicesArray}")
                 }
                 show()
             }

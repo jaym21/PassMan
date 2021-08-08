@@ -18,6 +18,11 @@ object Helper {
     private const val salt = "QWlGNHNhMTJTQWZ2bGhpV3U=" // base64 decode => AiF4sa12SAfvlhiWu
     private const val iv = "bVQzNFNhRkQ1Njc4UUFaWA==" // base64 decode => mT34SaFD5678QAZX
 
+    val servicesArray = mutableListOf("Amazon", "Apple", "Dropbox", "Facebook", "Flipkart",
+            "Github", "Google", "Google+", "Instagram", "LinkedIn", "Myntra", "Pinterest", "Reddit",
+            "Snapchat", "Soundcloud", "Spotify", "Tumblr", "Twitch", "Twitter", "Youtube")
+
+
     fun setIsFirstRun(context: Context, isFirstRun: Boolean) {
         val sharedPreferences = context.getSharedPreferences("Helper", Activity.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -30,31 +35,7 @@ object Helper {
         return sharedPreferences.getBoolean(FIRST_RUN, true)
     }
 
-//    fun encrypt(input: String): String{
-//        //creating a cipher object
-//        val cipher = Cipher.getInstance("AES")
-//        //entering key
-//        val keySpec = SecretKeySpec(KEY.toByteArray(),"AES/GCM/NoPadding")
-//        //initializing cipher
-//        cipher.init(Cipher.ENCRYPT_MODE, keySpec)
-//        //encryption
-//        val encrypt = cipher.doFinal(input.toByteArray())
-//
-//        return Base64.encode(encrypt, 0).toString()
-//    }
-//
-//    fun decrypt(input: String): String {
-//        //creating a cipher object
-//        val cipher = Cipher.getInstance("AES")
-//        //entering key
-//        val keySpec = SecretKeySpec(KEY.toByteArray(),"AES")
-//        //initializing cipher
-//        cipher.init(Cipher.DECRYPT_MODE, keySpec)
-//        //decryption
-//        val decrypt = cipher.doFinal(input.toByteArray())
-//
-//        return decrypt.toString()
-//    }
+
 
 
     fun encrypt(strToEncrypt: String):  String?

@@ -30,12 +30,13 @@
         android:paddingTop="12dp"
         android:paddingBottom="12dp"/>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvServices"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/service_item_layout"
-        android:layoutAnimation="@anim/rv_layout_fall_down"
+        android:layoutAnimation="@anim/rv_layout_bottom_slide_in"
         android:layout_marginTop="20dp"
         android:layout_below="@id/btnAdd"/>
 
