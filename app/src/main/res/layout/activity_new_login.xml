@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/lato_regular"
             android:hint="New Password"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="@color/text_color"
             android:textColorHint="@color/blue_500" />
 
@@ -73,12 +73,12 @@
         app:layout_constraintTop_toBottomOf="@id/tilNewPassword">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ConfirmPassword"
+            android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/lato_regular"
             android:hint="Confirm Password"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="@color/text_color"
             android:textColorHint="@color/blue_500" />
 
@@ -86,7 +86,7 @@
 
 
     <ImageView
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnAddPassword"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/ic_check"

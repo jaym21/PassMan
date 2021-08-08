@@ -11,7 +11,7 @@ class SplashActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         if (Helper.getIsFirstRun(this)) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, NewLogin::class.java)
             startActivity(intent)
             finish()
         }else {

@@ -12,8 +12,9 @@ import javax.crypto.spec.SecretKeySpec
 
 object Helper {
 
-    private val TAG = "Helper"
-    private var FIRST_RUN = "first_run"
+    private const val TAG = "Helper"
+    private const val FIRST_RUN = "first_run"
+    private const val LOCK_PASSWORD = "lock_password"
     private const val secretKey = "tK5UTui+DPh8lIlBxya5XVsmeDCoUl6vHhdIESMB6sQ="
     private const val salt = "QWlGNHNhMTJTQWZ2bGhpV3U=" // base64 decode => AiF4sa12SAfvlhiWu
     private const val iv = "bVQzNFNhRkQ1Njc4UUFaWA==" // base64 decode => mT34SaFD5678QAZX
@@ -35,11 +36,19 @@ object Helper {
         return sharedPreferences.getBoolean(FIRST_RUN, true)
     }
 
+    fun setLockPassword(context: Context, password: String) {
+        val sharedPreferences = context.getSharedPreferences("Helper", Activity.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString(LOCK_PASSWORD, password)
+        editor.apply()
+    }
 
+    fun getLockPassword(context: Context): String? {
+        val sharedPreferences = context.getSharedPreferences("Helper", Activity.MODE_PRIVATE)
+        return sharedPreferences.getString(LOCK_PASSWORD, "0")
+    }
 
-
-    fun encrypt(strToEncrypt: String):  String?
-    {
+    fun encrypt(strToEncrypt: String):  String? {
         try
         {
             val ivParameterSpec = IvParameterSpec(Base64.decode(iv, Base64.DEFAULT))
