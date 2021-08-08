@@ -16,7 +16,9 @@
         android:text="Services"
         android:textSize="35sp"
         android:textColor="@color/white"
-        android:fontFamily="@font/lato_bold"/>
+        android:fontFamily="@font/lato_bold"
+        android:layout_toStartOf="@id/btnAdd"/>
+
 
     <ImageView
         android:id="@+id/btnAdd"
@@ -27,6 +29,7 @@
         android:background="@drawable/service_display_bg"
         android:layout_alignParentEnd="true"
         app:cornerRadius="10dp"
+        android:elevation="5dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"/>
 
