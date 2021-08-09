@@ -15,7 +15,7 @@ class SplashActivity: AppCompatActivity() {
             startActivity(intent)
             finish()
         }else {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Authentication::class.java)
             startActivity(intent)
             finish()
         }
