@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/lato_regular"
-        android:text="Add a 4 digit to password to unlock the application"
+        android:text="Add a 4 digit to passcode to unlock the application"
         android:textColor="@color/text_light"
         app:layout_constraintTop_toBottomOf="@id/guideline"/>
 

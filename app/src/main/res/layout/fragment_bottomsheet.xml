@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/expand_bg">
+    android:background="@color/bg_color">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:layout_width="50dp"
@@ -47,14 +50,16 @@
                     android:layout_height="wrap_content"
                     android:text="Change"
                     android:textSize="18sp"
-                    android:textColor="@color/text_light" />
+                    android:textColor="@color/text_light"
+                    android:fontFamily="@font/lato_regular"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Passcode"
                     android:textSize="18sp"
-                    android:textColor="@color/text_light" />
+                    android:textColor="@color/text_light"
+                    android:fontFamily="@font/lato_regular"/>
 
 
             </LinearLayout>
@@ -80,14 +85,16 @@
                     android:layout_height="wrap_content"
                     android:text="Generate"
                     android:textSize="18sp"
-                    android:textColor="@color/text_light" />
+                    android:textColor="@color/text_light"
+                    android:fontFamily="@font/lato_regular"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Password"
                     android:textSize="18sp"
-                    android:textColor="@color/text_light" />
+                    android:textColor="@color/text_light"
+                    android:fontFamily="@font/lato_regular"/>
 
 
             </LinearLayout>
@@ -96,4 +103,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
