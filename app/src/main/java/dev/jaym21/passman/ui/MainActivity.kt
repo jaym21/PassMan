@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
 
         setUpRecycleView()
 
+        val bottomSheetFragment = BottomSheetFragment()
+
         viewModel.allService.observe({lifecycle}, Observer {
             serviceAdapter.updateList(it)
             runRecyclerViewAnimation(binding?.rvServices!!)
@@ -39,6 +41,10 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
 
         binding?.btnAdd?.setOnClickListener {
             startActivity(Intent(this, AddService::class.java))
+        }
+
+        binding?.btnExpandSheet?.setOnClickListener {
+            bottomSheetFragment.show(supportFragmentManager, "BottomSheet")
         }
     }
 

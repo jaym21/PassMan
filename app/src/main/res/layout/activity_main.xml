@@ -27,7 +27,7 @@
         android:src="@drawable/ic_add"
         app:tint="@color/blue_500"
         android:background="@drawable/service_display_bg"
-        android:layout_toStartOf="@id/btnExpand"
+        android:layout_toStartOf="@id/btnExpandSheet"
         app:cornerRadius="10dp"
         android:elevation="5dp"
         android:paddingTop="12dp"
@@ -35,7 +35,7 @@
         android:layout_marginEnd="10dp"/>
 
     <ImageView
-        android:id="@+id/btnExpand"
+        android:id="@+id/btnExpandSheet"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/ic_expand"
@@ -58,82 +58,83 @@
         android:layout_below="@id/btnAdd"/>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:visibility="visible"
-        android:background="@drawable/expand_bg"
-        android:layout_alignParentBottom="true"
-        android:elevation="10dp"
-        android:padding="20dp">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/llExpand"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        tools:visibility="visible"-->
+<!--        android:background="@drawable/expand_bg"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:elevation="10dp"-->
+<!--        android:padding="20dp">-->
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@drawable/expand_item_bg"
-            android:gravity="center"
-            android:padding="10dp"
-            android:layout_marginEnd="16dp">
-            
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_security"
-                app:tint="@color/blue_500"/>
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@drawable/expand_item_bg"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_marginEnd="16dp">-->
+<!--            -->
+<!--            <ImageView-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:src="@drawable/ic_security"-->
+<!--                app:tint="@color/blue_500"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Change"
-                android:textSize="18sp"
-                android:textColor="@color/text_light" />
-            
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Passcode"
-                android:textSize="18sp"
-                android:textColor="@color/text_light" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Change"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="@color/text_light" />-->
+<!--            -->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Passcode"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="@color/text_light" />-->
 
-            
-        </LinearLayout>
+<!--            -->
+<!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@drawable/expand_item_bg"
-            android:gravity="center"
-            android:padding="10dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@drawable/expand_item_bg"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp">-->
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_passcode"
-                app:tint="@color/blue_500"/>
+<!--            <ImageView-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:src="@drawable/ic_passcode"-->
+<!--                app:tint="@color/blue_500"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Generate"
-                android:textSize="18sp"
-                android:textColor="@color/text_light" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Generate"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="@color/text_light" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:textSize="18sp"
-                android:textColor="@color/text_light" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Password"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="@color/text_light" />-->
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </RelativeLayout>
