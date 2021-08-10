@@ -10,7 +10,6 @@
     android:padding="20dp">
 
     <TextView
-        android:id="@+id/tvPassmanAuth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_bold"
@@ -23,29 +22,12 @@
         android:layout_height="wrap_content"
         android:text="Enter 4 digit security password"
         android:textColor="@color/text_light"
-        android:layout_below="@id/tvPassmanAuth" />
-
-<!--    <EditText-->
-<!--        android:id="@+id/etAuthPassword"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:imeActionId="4"-->
-<!--        android:imeOptions="actionUnspecified"-->
-<!--        android:inputType="numberPassword"-->
-<!--        android:hint="_ _ _ _"-->
-<!--        android:cursorVisible="true"-->
-<!--        android:textColor="@color/blue_500"-->
-<!--        android:textColorHint="@color/blue_500"-->
-<!--        android:textSize="24sp"-->
-<!--        android:letterSpacing="0.2"-->
-<!--        android:maxLength="4"-->
-<!--        android:maxLines="1"-->
-<!--        android:singleLine="true"-->
-<!--        android:textAlignment="center"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_centerVertical="true"/>-->
+        android:layout_above="@id/llPassEdittext"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"/>
 
     <LinearLayout
+        android:id="@+id/llPassEdittext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -60,7 +42,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
-                android:inputType="number"
+                android:inputType="numberPassword"
                 android:maxLength="1"
                 android:textSize="30sp"
                 android:textColor="@color/blue_500"
@@ -74,7 +56,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
-                android:inputType="number"
+                android:inputType="numberPassword"
                 android:maxLength="1"
                 android:textSize="30sp"
                 android:textColor="@color/blue_500"
@@ -87,7 +69,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
-                android:inputType="number"
+                android:inputType="numberPassword"
                 android:maxLength="1"
                 android:textSize="30sp"
                 android:textColor="@color/blue_500"
@@ -100,28 +82,12 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
-                android:inputType="number"
+                android:inputType="numberPassword"
                 android:maxLength="1"
                 android:textSize="30sp"
                 android:textColor="@color/blue_500"
                 android:background="@drawable/edittext_bg"/>
 
         </LinearLayout>
-
-
-        <ImageView
-            android:id="@+id/btnConfirmAuth"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:src="@drawable/ic_check"
-            app:tint="@color/blue_500"
-            android:background="@drawable/service_display_bg"
-            app:cornerRadius="10dp"
-            android:elevation="5dp"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"/>
-
 
     </RelativeLayout>

@@ -1,12 +1,13 @@
 package dev.jaym21.passman.ui
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import android.widget.Toast
 import dev.jaym21.passman.databinding.ActivityAuthenticationBinding
 import dev.jaym21.passman.utils.GenericTextWatcher
@@ -15,6 +16,7 @@ import dev.jaym21.passman.utils.Helper
 class Authentication : AppCompatActivity() {
 
     lateinit var binding: ActivityAuthenticationBinding
+    lateinit var mainHandler: Handler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,25 +35,38 @@ class Authentication : AppCompatActivity() {
         binding.etPass3.addTextChangedListener(GenericTextWatcher(binding.etPass3, edit))
         binding.etPass4.addTextChangedListener(GenericTextWatcher(binding.etPass4, edit))
 
-        binding.btnConfirmAuth.setOnClickListener {
-            if (binding.etPass1.text.isNullOrEmpty() || binding.etPass2.text.isNullOrEmpty() || binding.etPass3.text.isNullOrEmpty() || binding.etPass4.text.isNullOrEmpty()) {
-                Toast.makeText(this, "Enter the password", Toast.LENGTH_SHORT).show()
+
+        //initializing a handler
+        mainHandler = Handler(Looper.getMainLooper())
+        //checking if the password every one second
+        mainHandler.post(object: Runnable {
+            override fun run() {
+                if (!checkPassword())
+                    mainHandler.postDelayed(this, 1000)
+            }
+        })
+    }
+
+    //checking if the entered password matches the set password
+    fun checkPassword(): Boolean {
+        if (binding.etPass1.text.isNotEmpty() && binding.etPass2.text.isNotEmpty() && binding.etPass3.text.isNotEmpty() && binding.etPass4.text.isNotEmpty()) {
+            val enteredPassword = binding.etPass1.text.toString() + binding.etPass2.text.toString() + binding.etPass3.text.toString() + binding.etPass4.text.toString()
+            if (enteredPassword == Helper.getLockPassword(this)) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                return true
             } else {
-                val enteredPassword = binding.etPass1.text.toString() + binding.etPass2.text.toString() + binding.etPass3.text.toString() + binding.etPass4.text.toString()
-                if (enteredPassword == Helper.getLockPassword(this)) {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    binding.etPass1.setText("")
-                    binding.etPass2.setText("")
-                    binding.etPass3.setText("")
-                    binding.etPass4.setText("")
-                    Toast.makeText(this, "Incorrect password, try again", Toast.LENGTH_SHORT).show()
-                }
+                binding.etPass1.setText("")
+                binding.etPass2.setText("")
+                binding.etPass3.setText("")
+                binding.etPass4.setText("")
+                binding.etPass1.requestFocus()
+                Toast.makeText(this, "Incorrect password, try again", Toast.LENGTH_SHORT).show()
+                return false
             }
         }
-
+        return false
     }
 
 }
