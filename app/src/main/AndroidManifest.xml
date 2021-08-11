@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PassMan">
-        <activity android:name=".ui.ChangePasscode"></activity>
+        <activity android:name=".ui.GeneratePassword"></activity>
+        <activity android:name=".ui.ChangePasscode" />
         <activity android:name=".ui.Authentication" />
         <activity
             android:name=".ui.SplashActivity"
