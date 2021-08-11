@@ -49,6 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColorHint="@color/blue_500"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/blue_500"
         app:layout_constraintTop_toBottomOf="@id/tvInfo">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -56,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/lato_regular"
-            android:hint="New Password"
+            android:hint="New Passcode"
             android:inputType="numberPassword"
             android:maxLength="4"
             android:textColor="@color/text_color"
@@ -71,6 +73,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColorHint="@color/blue_500"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/blue_500"
         app:layout_constraintTop_toBottomOf="@id/tilNewPassword">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -78,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/lato_regular"
-            android:hint="Confirm Password"
+            android:hint="Confirm Passcode"
             android:inputType="numberPassword"
             android:maxLength="4"
             android:textColor="@color/text_color"

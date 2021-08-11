@@ -1,5 +1,6 @@
 package dev.jaym21.passman.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +24,8 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
         val generatePassword = view.findViewById<LinearLayout>(R.id.llGeneratePassword)
 
         passcodeChange.setOnClickListener {
-            Toast.makeText(context, "PasscodeChange", Toast.LENGTH_SHORT).show()
+            val intentChange = Intent(context, ChangePasscode::class.java)
+            startActivity(intentChange)
         }
 
 
