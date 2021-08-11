@@ -30,7 +30,8 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
 
 
         generatePassword.setOnClickListener {
-            Toast.makeText(context, "GeneratePassword", Toast.LENGTH_SHORT).show()
+            val intentGenerate = Intent(context, GeneratePassword::class.java)
+            startActivity(intentGenerate)
         }
     }
 }
