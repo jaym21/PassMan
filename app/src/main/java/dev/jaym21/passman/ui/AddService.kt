@@ -26,8 +26,6 @@ class AddService : AppCompatActivity() {
         binding = ActivityAddServiceBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        //TODO: remove service name et when some service selected
-
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
         val adapter = ArrayAdapter(this, R.layout.spinner_item, Helper.servicesArray)
@@ -39,11 +37,13 @@ class AddService : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (Helper.servicesArray[position] == "Other") {
                     binding?.tilOtherName?.visibility = View.VISIBLE
+                }else {
+                    binding?.tilOtherName?.visibility = View.GONE
                 }
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
+
             }
         }
 

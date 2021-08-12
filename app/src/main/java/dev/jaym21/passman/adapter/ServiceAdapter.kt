@@ -56,7 +56,7 @@ class ServiceAdapter(private val listener: IServiceAdapter): RecyclerView.Adapte
             "Twitch" -> Glide.with(holder.itemView.context).load(R.drawable.ic_twitch).into(holder.logo)
             "Twitter" -> Glide.with(holder.itemView.context).load(R.drawable.ic_twitter).into(holder.logo)
             "Youtube" -> Glide.with(holder.itemView.context).load(R.drawable.ic_youtube).into(holder.logo)
-            else -> Glide.with(holder.itemView.context).load(R.drawable.ic_check).into(holder.logo)
+            else -> Glide.with(holder.itemView.context).load(R.drawable.ic_asterisk).into(holder.logo)
         }
     }
 
