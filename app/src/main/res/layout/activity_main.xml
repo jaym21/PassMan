@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Services"
         android:textSize="35sp"
-        android:textColor="@color/white"
+        android:textColor="@color/text_color"
         android:fontFamily="@font/lato_bold"
         android:layout_toStartOf="@id/btnAdd"/>
 
