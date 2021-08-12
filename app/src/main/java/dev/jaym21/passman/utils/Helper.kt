@@ -21,7 +21,7 @@ object Helper {
 
     val servicesArray = mutableListOf("Amazon", "Apple", "Dropbox", "Facebook", "Flipkart",
             "Github", "Google", "Google+", "Instagram", "LinkedIn", "Myntra", "Pinterest", "Reddit",
-            "Snapchat", "Soundcloud", "Spotify", "Tumblr", "Twitch", "Twitter", "Youtube")
+            "Snapchat", "Soundcloud", "Spotify", "Tumblr", "Twitch", "Twitter", "Youtube", "Other")
 
 
     fun setIsFirstRun(context: Context, isFirstRun: Boolean) {

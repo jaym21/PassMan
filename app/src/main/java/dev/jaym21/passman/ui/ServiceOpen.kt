@@ -72,6 +72,7 @@ class ServiceOpen : AppCompatActivity() {
             "Twitch" -> binding?.ivServiceImage?.setImageResource(R.drawable.ic_twitch)
             "Twitter" -> binding?.ivServiceImage?.setImageResource(R.drawable.ic_twitter)
             "Youtube" -> binding?.ivServiceImage?.setImageResource(R.drawable.ic_youtube)
+            else -> binding?.ivServiceImage?.setImageResource(R.drawable.ic_check)
         }
 
 

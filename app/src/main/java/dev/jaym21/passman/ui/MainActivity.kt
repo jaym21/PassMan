@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        //TODO: lock app when app is paused stopped or not killed
+
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
         setUpRecycleView()
