@@ -36,8 +36,11 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
 
         val bottomSheetFragment = BottomSheetFragment()
 
-        viewModel.allService.observe({lifecycle}, Observer {
-            serviceAdapter.updateList(it)
+        viewModel.allService.observe({lifecycle}, Observer { services ->
+            services.sortedBy {
+                it.name
+            }
+            serviceAdapter.updateList(services)
             runRecyclerViewAnimation(binding?.rvServices!!)
         })
 

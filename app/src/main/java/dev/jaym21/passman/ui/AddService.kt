@@ -20,6 +20,7 @@ class AddService : AppCompatActivity() {
 
     private var binding: ActivityAddServiceBinding? = null
     lateinit var viewModel: ServiceViewModel
+    private var savedServiceList: List<String?> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +29,16 @@ class AddService : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
-        val adapter = ArrayAdapter(this, R.layout.spinner_item, Helper.servicesArray)
+        savedServiceList = Helper.getServiceList(this)!!.toList()
+
+        val adapter = ArrayAdapter(this, R.layout.spinner_item, savedServiceList)
         adapter.setDropDownViewResource(R.layout.spinner_dropdown)
         binding?.spinnerServices?.adapter = adapter
 
 
         binding?.spinnerServices?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (Helper.servicesArray[position] == "Other") {
+                if (savedServiceList[position] == "Other") {
                     binding?.tilOtherName?.visibility = View.VISIBLE
                 }else {
                     binding?.tilOtherName?.visibility = View.GONE
@@ -91,8 +94,14 @@ class AddService : AppCompatActivity() {
                             encryptPass
                         )
                         viewModel.insertService(service)
-                        Helper.servicesArray.remove(binding?.spinnerServices?.selectedItem.toString())
-                        Log.d("AddService", Helper.servicesArray.toString())
+
+                        //getting the service list from shared preferences
+                        val serviceList = Helper.getServiceList(this)
+                        //removing the added service from the list
+                        serviceList?.remove(binding?.spinnerServices?.selectedItem.toString())
+                        //saving the updated service list to shared preferences
+                        Helper.saveServiceList(this, serviceList)
+
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
                     }
