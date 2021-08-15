@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import dev.jaym21.passman.R
 import dev.jaym21.passman.model.Service
 import dev.jaym21.passman.utils.ServiceDiffUtil
+import java.util.*
 
 class ServiceAdapter(private val listener: IServiceAdapter): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
 
@@ -66,6 +67,7 @@ class ServiceAdapter(private val listener: IServiceAdapter): RecyclerView.Adapte
 
     //this function is to update the recycler by diffUtil(only changing the changes made observed through viewModel, and not the whole list again)
     fun updateList(newList: List<Service>) {
+        Collections.sort(newList)
         val diffUtilCallback = ServiceDiffUtil(allServices, newList)
         //Calculates the list of update operations that can covert old list into new list
         val diffResult = DiffUtil.calculateDiff(diffUtilCallback)

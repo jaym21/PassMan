@@ -11,4 +11,13 @@ data class Service(
         val name: String,
         val username: String,
         val password: String
-): Serializable
+): Serializable, Comparable<Service> {
+    override fun compareTo(other: Service): Int {
+        if (this.name > other.name)
+            return 1
+        if (this.name < other.name)
+            return -1
+
+        return 0
+    }
+}
