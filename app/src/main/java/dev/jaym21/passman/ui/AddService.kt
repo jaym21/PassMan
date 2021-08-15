@@ -99,6 +99,8 @@ class AddService : AppCompatActivity() {
                         val serviceList = Helper.getServiceList(this)
                         //removing the added service from the list
                         serviceList?.remove(binding?.spinnerServices?.selectedItem.toString())
+                        //sorting the service list
+                        serviceList?.sortBy { it }
                         //saving the updated service list to shared preferences
                         Helper.saveServiceList(this, serviceList)
 

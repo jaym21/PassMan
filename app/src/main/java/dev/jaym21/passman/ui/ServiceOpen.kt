@@ -26,6 +26,7 @@ import dev.jaym21.passman.R
 import dev.jaym21.passman.databinding.ActivityServiceOpenBinding
 import dev.jaym21.passman.model.Service
 import dev.jaym21.passman.utils.Helper
+import java.util.*
 
 class ServiceOpen : AppCompatActivity() {
 
@@ -93,6 +94,8 @@ class ServiceOpen : AppCompatActivity() {
             val serviceList = Helper.getServiceList(this)
             //adding the deleted service from the list
             serviceList?.add(selectedService!!.name)
+            //sorting the service list
+            serviceList?.sortBy { it }
             //saving the updated service list to shared preferences
             Helper.saveServiceList(this, serviceList)
 
@@ -108,6 +111,8 @@ class ServiceOpen : AppCompatActivity() {
                     val savedServices = Helper.getServiceList(context)
                     //removing the again added service from the list
                     savedServices?.remove(selectedService!!.name)
+                    //sorting the service list
+                    savedServices?.sortBy { it }
                     //saving the updated service list to shared preferences
                     Helper.saveServiceList(context, savedServices)
                 }
