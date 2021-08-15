@@ -1,5 +1,6 @@
 package dev.jaym21.passman.ui
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
@@ -15,6 +16,7 @@ import dev.jaym21.passman.adapter.ServiceAdapter
 import dev.jaym21.passman.databinding.ActivityMainBinding
 import dev.jaym21.passman.model.Service
 import java.util.*
+import kotlin.system.exitProcess
 import android.content.Intent as Intent
 
 class MainActivity : AppCompatActivity(), IServiceAdapter {
@@ -66,6 +68,15 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
         val controller = AnimationUtils.loadLayoutAnimation(context, R.anim.rv_layout_bottom_slide_in)
         recyclerView.layoutAnimation = controller
         recyclerView.scheduleLayoutAnimation()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val homeIntent =  Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory( Intent.CATEGORY_HOME );
+        homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
+        startActivity(homeIntent);
+
     }
 
     override fun onStart() {
