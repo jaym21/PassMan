@@ -52,6 +52,8 @@ class AddService : AppCompatActivity() {
 
         binding?.btnBack?.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_left,
+                    R.anim.slide_out_right);
             finish()
         }
 
@@ -110,6 +112,12 @@ class AddService : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 
     private fun checkUsernameAndPassword(): Boolean {

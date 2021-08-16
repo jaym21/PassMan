@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
 
         binding?.btnAdd?.setOnClickListener {
             startActivity(Intent(this, AddService::class.java))
+            overridePendingTransition(R.anim.slide_in_right,
+                    R.anim.slide_out_left);
         }
 
         binding?.btnExpandSheet?.setOnClickListener {
@@ -103,5 +105,7 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
         val intent = Intent(this, ServiceOpen::class.java)
         intent.putExtra("selected_service", service)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right,
+                R.anim.slide_out_left);
     }
 }
