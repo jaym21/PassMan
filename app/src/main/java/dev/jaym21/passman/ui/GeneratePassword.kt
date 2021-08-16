@@ -2,6 +2,7 @@ package dev.jaym21.passman.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.SeekBar
 import android.widget.Toast
 import dev.jaym21.passman.databinding.ActivityGeneratePasswordBinding
@@ -36,7 +37,7 @@ class GeneratePassword : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         }
     }
 
-    fun generatePassword(isWithLetters: Boolean, isWithNumbers: Boolean, isWithSymbols: Boolean, length: Int): String {
+    private fun generatePassword(isWithLetters: Boolean, isWithNumbers: Boolean, isWithSymbols: Boolean, length: Int): String {
         var allAvailable = ""
 
         //adding all the selected type in a string
@@ -49,14 +50,18 @@ class GeneratePassword : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         val rnd = SecureRandom.getInstance("SHA1PRNG")
         val result = StringBuilder(length)
-
-        var i = 0
-        while (i < length) {
-            //getting a random position number from the total length of allAvailable
-            val randomPos = rnd.nextInt(allAvailable.length)
-            //adding the character at the randomPos in allAvailable to result
-            result.append(allAvailable[randomPos])
-            i++
+        
+        if (allAvailable.length <= 0){
+            Toast.makeText(this, "Select at least one option from letters, numbers or symbols", Toast.LENGTH_LONG).show()
+        }else {
+            var i = 0
+            while (i < length) {
+                //getting a random position number from the total length of allAvailable
+                val randomPos = rnd.nextInt(allAvailable.length)
+                //adding the character at the randomPos in allAvailable to result
+                result.append(allAvailable[randomPos])
+                i++
+            }
         }
 
         return result.toString()
