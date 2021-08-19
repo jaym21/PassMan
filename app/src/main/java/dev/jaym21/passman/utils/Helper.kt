@@ -94,7 +94,6 @@ object Helper {
     fun decrypt(strToDecrypt : String): String? {
         try
         {
-
             val ivParameterSpec =  IvParameterSpec(Base64.decode(iv, Base64.DEFAULT))
 
             val factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1")

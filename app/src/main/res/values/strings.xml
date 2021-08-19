@@ -13,13 +13,18 @@
         <item>LinkedIn</item>
         <item>Myntra</item>
         <item>Pinterest</item>
+        <item>Quora</item>
         <item>Reddit</item>
+        <item>Skype</item>
         <item>Snapchat</item>
         <item>Soundcloud</item>
         <item>Spotify</item>
+        <item>TikTok</item>
         <item>Tumblr</item>
         <item>Twitch</item>
         <item>Twitter</item>
+        <item>Vimeo</item>
+        <item>Yahoo</item>
         <item>Youtube</item>
     </string-array>
 </resources>

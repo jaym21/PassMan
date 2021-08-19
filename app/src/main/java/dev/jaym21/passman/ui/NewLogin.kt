@@ -11,8 +11,8 @@ class NewLogin : AppCompatActivity() {
 
     private var binding: ActivityNewLoginBinding? = null
     private val servicesArray = arrayListOf<String?>("Amazon", "Apple", "Dropbox", "Facebook", "Flipkart",
-        "Github", "Google", "Google+", "Instagram", "LinkedIn", "Myntra", "Pinterest", "Reddit",
-        "Snapchat", "Soundcloud", "Spotify", "Tumblr", "Twitch", "Twitter", "Youtube", "Other")
+        "Github", "Google", "Google+", "Instagram", "LinkedIn", "Myntra", "Pinterest", "Quora", "Reddit", "Skype",
+        "Snapchat", "Soundcloud", "Spotify", "TikTok", "Tumblr", "Twitch", "Twitter", "Vimeo", "Yahoo", "Youtube", "Other")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
