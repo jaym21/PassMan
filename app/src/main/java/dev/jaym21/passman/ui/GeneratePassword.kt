@@ -79,18 +79,6 @@ class GeneratePassword : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         selectedLength = seekBar?.progress!!
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        //clearing generated password text view
-        binding?.tvGenerated?.text = ""
-    }
-
-    override fun onResume() {
-        super.onResume()
-        //clearing generated password text view
-        binding?.tvGenerated?.text = ""
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         binding = null
