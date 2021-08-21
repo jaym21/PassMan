@@ -6,4 +6,4 @@
 - Password generating functionality is also provided in the application.
 - Room database is used to store passwords and other information.
 - Passwords are encrypted using Advanced Encrytion Standard (AES) before storing in database.
-- MVVM model is used to design the frontend.
+- MVVM architecture is used for ui.
