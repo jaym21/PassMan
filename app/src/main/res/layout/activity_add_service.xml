@@ -47,96 +47,89 @@
                 android:backgroundTint="@color/bg_light"
                 android:elevation="5dp"
                 android:padding="18dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="16dp"
                 android:layout_below="@id/iv_illustration">
 
+                <TextView
+                    android:id="@+id/tvChoose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose a service"
+                    android:textSize="22sp"
+                    android:textColor="@color/text_color"
+                    android:fontFamily="@font/lato_bold"
+                    android:layout_marginBottom="16dp"/>
 
-                    <LinearLayout
+                <Spinner
+                    android:id="@+id/spinnerServices"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="16dp"
+                    android:background="@drawable/spinner_shape"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilOtherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputStyle"
+                    android:layout_marginTop="20dp"
+                    android:textColorHint="@color/blue_500"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOtherName"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:hint="Service Name"
+                        android:fontFamily="@font/lato_regular"
+                        android:inputType="text"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/blue_500"/>
 
-                        <TextView
-                            android:id="@+id/tvChoose"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Choose a service"
-                            android:textSize="22sp"
-                            android:textColor="@color/text_color"
-                            android:fontFamily="@font/lato_bold"
-                            android:layout_marginBottom="16dp"/>
-
-                        <Spinner
-                            android:id="@+id/spinnerServices"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:padding="16dp"
-                            android:background="@drawable/spinner_shape"/>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/tilOtherName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/InputStyle"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="@color/blue_500"
-                            android:visibility="gone"
-                            tools:visibility="visible">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etOtherName"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:hint="Service Name"
-                                android:fontFamily="@font/lato_regular"
-                                android:inputType="text"
-                                android:textColor="@color/text_color"
-                                android:textColorHint="@color/blue_500"/>
-
-                        </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/tilUsername"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/InputStyle"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="@color/blue_500">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputStyle"
+                    android:layout_marginTop="20dp"
+                    android:textColorHint="@color/blue_500">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etUsername"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:hint="Username"
-                            android:fontFamily="@font/lato_regular"
-                            android:inputType="text"
-                            android:textColor="@color/text_color"
-                            android:textColorHint="@color/blue_500"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Username"
+                    android:fontFamily="@font/lato_regular"
+                    android:inputType="text"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/blue_500"/>
 
-                        </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/tilPassword"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/InputStyle"
-                            android:layout_marginTop="20dp"
-                            android:textColorHint="@color/blue_500">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputStyle"
+                    android:layout_marginTop="20dp"
+                    android:textColorHint="@color/blue_500">
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etPassword"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:hint="Password"
-                                android:fontFamily="@font/lato_regular"
-                                android:inputType="text"
-                                android:textColor="@color/text_color"
-                                android:textColorHint="@color/blue_500" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Password"
+                        android:fontFamily="@font/lato_regular"
+                        android:inputType="text"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/blue_500" />
 
-                        </com.google.android.material.textfield.TextInputLayout>
-                    </LinearLayout>
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>

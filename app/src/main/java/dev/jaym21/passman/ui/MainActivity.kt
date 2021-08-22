@@ -3,6 +3,8 @@ package dev.jaym21.passman.ui
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -23,6 +25,7 @@ import android.content.Intent as Intent
 class MainActivity : AppCompatActivity(), IServiceAdapter {
 
     private var binding: ActivityMainBinding? = null
+    private val TAG = "MainActivity"
     lateinit var viewModel: ServiceViewModel
     lateinit var serviceAdapter: ServiceAdapter
 
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        Log.d(TAG, "onCreate: STARTED")
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(ServiceViewModel::class.java)
 
@@ -39,10 +43,17 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
         val bottomSheetFragment = BottomSheetFragment()
 
         viewModel.allService.observe({lifecycle}, Observer { services ->
+            //sorting services alphabetically
             services.sortedBy {
                 it.name
             }
             serviceAdapter.updateList(services)
+            //checking if the recyclerview is empty
+            if (serviceAdapter.itemCount > 0) {
+                binding?.tvNoService?.visibility = View.GONE
+            } else {
+                binding?.tvNoService?.visibility = View.VISIBLE
+            }
             runRecyclerViewAnimation(binding?.rvServices!!)
         })
 
@@ -81,18 +92,21 @@ class MainActivity : AppCompatActivity(), IServiceAdapter {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        runRecyclerViewAnimation(binding?.rvServices!!)
-    }
-
     override fun onRestart() {
         super.onRestart()
+        Log.d(TAG, "onRestart: STARTED")
         runRecyclerViewAnimation(binding?.rvServices!!)
+        //checking if the recyclerview is empty
+        if (serviceAdapter.itemCount > 0) {
+            binding?.tvNoService?.visibility = View.GONE
+        } else {
+            binding?.tvNoService?.visibility = View.VISIBLE
+        }
     }
 
     override fun onResume() {
         super.onResume()
+        Log.d(TAG, "onResume: STARTED")
         runRecyclerViewAnimation(binding?.rvServices!!)
     }
 

@@ -24,10 +24,6 @@ object Helper {
     private const val salt = "QWlGNHNhMTJTQWZ2bGhpV3U=" // base64 decode => AiF4sa12SAfvlhiWu
     private const val iv = "bVQzNFNhRkQ1Njc4UUFaWA==" // base64 decode => mT34SaFD5678QAZX
 
-//    var servicesArray = mutableListOf("Amazon", "Apple", "Dropbox", "Facebook", "Flipkart",
-//            "Github", "Google", "Google+", "Instagram", "LinkedIn", "Myntra", "Pinterest", "Reddit",
-//            "Snapchat", "Soundcloud", "Spotify", "Tumblr", "Twitch", "Twitter", "Youtube", "Other")
-
 
     fun setIsFirstRun(context: Context, isFirstRun: Boolean) {
         val sharedPreferences = context.getSharedPreferences("Helper", Activity.MODE_PRIVATE)

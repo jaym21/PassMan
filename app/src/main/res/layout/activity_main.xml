@@ -11,6 +11,19 @@
     android:background="@color/bg_color">
 
     <TextView
+        android:id="@+id/tvNoService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No services added"
+        android:textSize="22sp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/lato_regular"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Services"
