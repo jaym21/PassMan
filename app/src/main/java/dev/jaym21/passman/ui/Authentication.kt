@@ -7,9 +7,13 @@ import android.os.Handler
 import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import dev.jaym21.passman.databinding.ActivityAuthenticationBinding
+import dev.jaym21.passman.utils.BiometricUtil
 import dev.jaym21.passman.utils.GenericTextWatcher
 import dev.jaym21.passman.utils.Helper
 
@@ -22,6 +26,8 @@ class Authentication : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        showBiometricOption()
 
         //getting focus to first edit text
         binding.etPass1.requestFocus()
@@ -45,6 +51,41 @@ class Authentication : AppCompatActivity() {
                     mainHandler.postDelayed(this, 1000)
             }
         })
+    }
+
+    private fun showBiometricOption() {
+        if (BiometricUtil.isBiometricsAvailable(this)) {
+            val promptInfo = BiometricUtil.setBiometricPrompt("Biometric Authentication", "Enter biometric credentials to proceed.", false)
+            val biometricPrompt = initBiometricPrompt()
+            biometricPrompt.authenticate(promptInfo)
+        }
+        else
+            Toast.makeText(this, "Biometric not available", Toast.LENGTH_SHORT).show()
+    }
+
+    //initializing biometric prompt and handling callbacks
+    private fun initBiometricPrompt(): BiometricPrompt {
+
+        val executor = ContextCompat.getMainExecutor(this)
+
+        val callback = object: BiometricPrompt.AuthenticationCallback() {
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                super.onAuthenticationError(errorCode, errString)
+            }
+
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
+                val intent = Intent(this@Authentication, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            override fun onAuthenticationFailed() {
+                super.onAuthenticationFailed()
+                Toast.makeText(this@Authentication, "Auth Failed", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return BiometricPrompt(this, executor, callback)
     }
 
     //checking if the entered password matches the set password
