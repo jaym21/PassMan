@@ -20,6 +20,13 @@
 
 <h2 align="center">Screenshots</h2>
 
-<img src="screenshots/main_screen.jpg" height="400" />   <img src="screenshots/service_open.jpg" height="400" />   <img src="screenshots/add_service.jpg" height="400" />
+|   Passcode Screen    | All Services    |   Add Service   
+|---	|---	|---
+|  ![](https://github.com/jaym21/PassMan/blob/main/screenshots/passcode_screen.jpg)    |  ![](https://github.com/jaym21/PassMan/blob/main/screenshots/main_screen.jpg)    |   ![](https://github.com/jaym21/PassMan/blob/main/screenshots/add_service.jpg)    
 
-<img src="screenshots/passcode_screen.jpg" height="400" />   <img src="screenshots/generated_password.jpg" height="400" /> 
+|   Service Details  |   Generate Password    | Add Passcode    |
+|---    |---	|---	|
+|   ![](https://github.com/jaym21/PassMan/blob/main/screenshots/service_open.jpg)    |   ![](https://github.com/jaym21/PassMan/blob/main/screenshots/generated_password.jpg)      |   ![](https://github.com/jaym21/PassMan/blob/main/screenshots/add_passcode.jpg)
+
+<br />
+
