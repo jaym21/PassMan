@@ -1,11 +1,8 @@
 package dev.jaym21.passman.utils
 
 import android.content.Context
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
-import androidx.core.content.ContextCompat
 
 object BiometricUtil {
 
