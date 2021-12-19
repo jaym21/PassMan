@@ -16,6 +16,11 @@
 
 <h2 align="center">Download</h2>
 
+***Latest PassMan apk👇***
+<br>
+<br>
+[![PassMan](https://img.shields.io/badge/PassMan-APK-%2364B5F6?style=for-the-badge&logo=android)](https://github.com/Spikeysanju/Einsen/releases/download/v1.0.0-alpha04/Einsen.apk)
+
 <a href='https://play.google.com/store/apps/details?id=dev.jaym21.passman'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
 <h2 align="center">Screenshots</h2>
